@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,7 +15,8 @@
       * {
         box-sizing: border-box;
       }
-      html, body {
+      html,
+      body {
         margin: 0;
         padding: 0;
         background: linear-gradient(145deg, #02030a, #101737 65%, #0a0e20);
@@ -37,7 +38,9 @@
         align-items: center;
         justify-content: center;
         padding: 32px;
-        transition: opacity 0.8s ease, transform 0.8s ease;
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
         opacity: 0;
         transform: translateY(24px);
       }
@@ -58,18 +61,34 @@
         margin: 0 0 8px;
         color: var(--accent);
       }
-      .card p { margin: 4px 0 14px; color: var(--subtle); }
-      .bolda { font-weight: 700; color: var(--accent); }
-      .html-certificate { font-style: italic; color: #dcd2a8; }
+      .card p {
+        margin: 4px 0 14px;
+        color: var(--subtle);
+      }
+      .bolda {
+        font-weight: 700;
+        color: var(--accent);
+      }
+      .html-certificate {
+        font-style: italic;
+        color: #dcd2a8;
+      }
       .cert-image {
         width: 100%;
         height: 440px;
-        object-fit: fill;
+        object-fit: contain;
         border-radius: 12px;
         border: 2px solid rgba(255, 223, 80, 0.8);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
       }
-      .nav-note { font-size: 0.95rem; margin-top: 12px; color: #cabf7d; }
+      .cert-image.two {
+        object-fit: contain;
+      }
+      .nav-note {
+        font-size: 0.95rem;
+        margin-top: 12px;
+        color: #cabf7d;
+      }
       .cta-link {
         display: inline-block;
         margin-top: 16px;
@@ -87,7 +106,7 @@
       <section id="scene1" class="active">
         <div class="card">
           <h2 class="bolda">Class Photo</h2>
-          <p class="html-certificate">First display: one.jpeg (class photo), as requested.</p>
+          <p class="html-certificate">First display: one.jpeg (class photo).</p>
           <img src="one.jpeg" alt="Class Photo" class="cert-image" />
           <p class="nav-note">Scroll to continue to HTML Basics Certificate</p>
         </div>
@@ -95,15 +114,23 @@
       <section id="scene2">
         <div class="card">
           <h2 class="bolda">HTML Basics Certificate</h2>
-          <p class="html-certificate">Second display: two.jpg (HTML Basics Certificate).</p>
-          <img src="two.jpg" alt="HTML Basics Certificate" class="cert-image" />
+          <p class="html-certificate">
+            Second display: two.jpg (HTML Basics Certificate).
+          </p>
+          <img
+            src="two.jpg"
+            alt="HTML Basics Certificate"
+            class="cert-image two"
+          />
           <p class="nav-note">Scroll to continue to C Basics Certificate</p>
         </div>
       </section>
       <section id="scene3">
         <div class="card">
           <h2 class="bolda">C Basics Certificate</h2>
-          <p class="html-certificate">Third display: three.png (C Basics Certificate).</p>
+          <p class="html-certificate">
+            Third display: three.png (C Basics Certificate).
+          </p>
           <img src="three.png" alt="C Basics Certificate" class="cert-image" />
           <p class="nav-note">Scroll to return to portfolio</p>
           <a class="cta-link" href="portofolio.html">Back to Portfolio</a>
@@ -111,17 +138,21 @@
       </section>
     </div>
     <script>
-      const sections = document.querySelectorAll('section');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          } else {
-            entry.target.classList.remove('active');
-          }
-        });
-      }, { threshold: 0.52 });
-      sections.forEach(section => observer.observe(section));
+      const sections = document.querySelectorAll("section");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            } else {
+              entry.target.classList.remove("active");
+            }
+          });
+        },
+        { threshold: 0.52 },
+      );
+      sections.forEach((section) => observer.observe(section));
     </script>
   </body>
 </html>
+
